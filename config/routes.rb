@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  resources :coinsaves
   resources :coinusers
+  resources :wallets
+  resources :coinusers
+  root "controller#action"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

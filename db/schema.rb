@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315083026) do
+ActiveRecord::Schema.define(version: 20160315084254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coinsaves", force: :cascade do |t|
+    t.string   "coinsaveid"
+    t.string   "walletid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "coinusers", force: :cascade do |t|
     t.string   "username"
@@ -23,6 +30,13 @@ ActiveRecord::Schema.define(version: 20160315083026) do
     t.string   "userid"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "wallets", force: :cascade do |t|
+    t.string   "walletid"
+    t.string   "coinsaveid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,0 +1,25 @@
+<%= form_for(@coinsafe) do |f| %>
+  <% if @coinsafe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coinsafe.errors.count, "error") %> prohibited this coinsafe from being saved:</h2>
+
+      <ul>
+      <% @coinsafe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :coinsaveid %><br>
+    <%= f.text_field :coinsaveid %>
+  </div>
+  <div class="field">
+    <%= f.label :walletid %><br>
+    <%= f.text_field :walletid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
