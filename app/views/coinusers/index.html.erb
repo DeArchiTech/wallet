@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Coinusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Encryptedpwd</th>
+      <th>Userid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coinusers.each do |coinuser| %>
+      <tr>
+        <td><%= coinuser.username %></td>
+        <td><%= coinuser.email %></td>
+        <td><%= coinuser.encryptedpwd %></td>
+        <td><%= coinuser.userid %></td>
+        <td><%= link_to 'Show', coinuser %></td>
+        <td><%= link_to 'Edit', edit_coinuser_path(coinuser) %></td>
+        <td><%= link_to 'Destroy', coinuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Coinuser', new_coinuser_path %>
