@@ -62,11 +62,13 @@ class CoinusersController < ApplicationController
     end
   end
 
+  def set_coinuser
+    @coinuser = Coinuser.find(coinuser_params)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_coinuser
-      @coinuser = Coinuser.find(coinuser_params)
-    end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coinuser_params
