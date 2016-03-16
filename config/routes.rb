@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root 'static_pages#home'
   get 'static_pages/home'
   get 'static_pages/help'
 
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
   resources :coinsaves
   resources :wallets
-  resources :coinusers
+  resources :coinusers, path_names: { new: "signup" }
 #  root 'coinusers#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
