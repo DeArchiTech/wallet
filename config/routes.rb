@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :coinsaves
   resources :wallets
+
   resources :coinusers, path_names: { new: "signup" }
+  resources :sessions, path_names: { new: "login" }
 #  root 'coinusers#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
