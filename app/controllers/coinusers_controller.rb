@@ -10,6 +10,7 @@ class CoinusersController < ApplicationController
   # GET /coinusers/1
   # GET /coinusers/1.json
   def show
+    @coinuser = Coinuser.find(params[:id])
   end
 
   # GET /coinusers/new

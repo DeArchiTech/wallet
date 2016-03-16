@@ -1,3 +1,44 @@
-<h1>Sign Up As A New Coin User!!!</h1>
+<% provide(:title, 'Sign up') %>
 
-<%= render 'form' %>
+<div class="container">
+  <section>
+
+    <div class="page-header" id="feedback">
+      <h2>Sign Up Now : <small><span style="color:orange">Sign Up As A New Coin User!!!</span></small></h2>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <%= form_for(@coinuser) do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :username %>
+
+              <%= f.label :email %>
+              <%= f.email_field :email %>
+
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation %>
+
+              <hr>
+
+              <%= f.submit "Create my account", class: "btn btn-info" %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+    <!--<div class="container">-->
+      <!--<div class="row">-->
+        <!--<div class="col-sm-4" >.col-sm-4</div>-->
+        <!--<div class="col-sm-4" >.col-sm-4</div>-->
+        <!--<div class="col-sm-4" >.col-sm-4</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </section>
+</div>
